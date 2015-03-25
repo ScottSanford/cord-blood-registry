@@ -3,7 +3,7 @@
 			<span>{{title}}</span>
 			<div class="purple-divider"></div>
 			<ul class="main-content-list">
-				<a href="#" ng-repeat="item in folder">
+				<a ng-click="openFolder(item.id)" ng-repeat="item in folder">
 					<li>{{item.name}}</li>
 				</a>
 			</ul>

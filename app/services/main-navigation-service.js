@@ -10,6 +10,42 @@ angular.module('cbrAPP').factory("mainNavService", function($q) {
                         return deferred.promise;
                 },
 
+                getScientificExperience: function() {
+                    var deferred = $q.defer();
+                    mflyCommands.search('@ScientificExperience')
+                        .done(function(data){
+                            deferred.resolve(data);
+                        })
+                        return deferred.promise;
+                },
+
+                getPatientCounseling: function() {
+                    var deferred = $q.defer();
+                    mflyCommands.search('@PatientCounseling')
+                        .done(function(data){
+                            deferred.resolve(data);
+                        })
+                        return deferred.promise;
+                },
+
+                getClinicalResources: function() {
+                    var deferred = $q.defer();
+                    mflyCommands.search('@ClinicalResources')
+                        .done(function(data){
+                            deferred.resolve(data);
+                        })
+                        return deferred.promise;
+                },
+
+                getCBRPartnership: function() {
+                    var deferred = $q.defer();
+                    mflyCommands.search('@CBRPartnership')
+                        .done(function(data){
+                            deferred.resolve(data);
+                        })
+                        return deferred.promise;
+                },
+
                 getItemNameInFolder: function(folderID) {
                     var deferred = $q.defer();
                     mflyCommands.getFolder(folderID)
@@ -19,13 +55,8 @@ angular.module('cbrAPP').factory("mainNavService", function($q) {
                         return deferred.promise;
                 }, 
 
-                openItem: function(itemID) {
-                    var deferred = $q.defer();
-                    mflyCommands.openItem(itemID)
-                            .done(function(data){        
-                                deferred.resolve(data);
-                            })
-                        return deferred.promise;                    
+                openFolder: function(folderID) {
+                    mflyCommands.openFolder(folderID);          
                 }
 
             }

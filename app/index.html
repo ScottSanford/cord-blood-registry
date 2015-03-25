@@ -5,46 +5,84 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<link rel="stylesheet" href="lib/bootstrap.css">
+	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/animate.css">
+	<link rel="stylesheet" href="css/jquery.mmenu.css">
 
 	<title>Cord Blood Registry</title>
 
 </head>
 	<body>
-		
 		<!-- iPad status bar -->
-		<div class="status-bar">iPad</div>
+		<!-- 	<div class="status-bar">iPad</div> -->
 
-		<div class="container" ng-controller="landingPageCtrl">
+			<div class="container" ng-controller="landingPageCtrl">
+				<div class="header">
+		        	<a href="#menu"><span class="fa fa-bars fa-2x" id="hamburger-menu"></span></a>
+				</div>
 
-			<header>
-				<a href="" ng-click="makeAllActiveClasses()"><img src="images/LogoCBR.png" height="138" width="202"></a>
-				<div class="close-btn">Close</div>
-			</header>
+				<div id="menu">
+		    		 <ul>
+				        <li class="annotations">
+				          <i class="fa fa-pencil-square-o"></i> Annotations
+				        </li>
+				        <li class="second-screen">
+				          <i class="fa fa-slideshare"></i> Second Screen
+				        </li>
+				        <li class="collections">
+				          <i class="fa fa-plus"></i> Collections
+				        </li>
+				        <li class="email">
+				          <i class="fa fa-share"></i> Email
+				        </li>
+				        
+				<!--    <li class="comments">
+				          <i class="fa fa-comments"></i> Comments
+				        </li>
+				        <li class="notes">
+				          <i class="fa fa-pencil"></i> Notes
+				        </li> -->
 
-		    <!-- navigation should be in an ngRepeat -->
-			<main class="row">
-				<nav class="col-md-3">
-    				<ul class="nav nav-pills nav-stacked">
-    					<a ng-href="#/{{folder.class}}" ng-repeat="folder in folders" ng-click="toggleClass($index)">
-    						<li class="nav-menu-item {{ folder.class }}" ng-class="{inactive: folder.inactive}">
-								<img src="{{folder.thumbnailUrl}}" class="col-md-6">
-								<span class="col-md-6">{{folder.name}}</span>
-    						</li>
-    					</a>
-    				</ul>					
-				</nav>
-				<content class="col-md-9">
-					<div ng-view class="{{viewClass}} row"></div>
-				</content>
-			</main>
+				        <li class="previous">
+				          <i class="fa fa-arrow-left"></i> Previous
+				        </li>
+				        <li class="next">
+				          <i class="fa fa-arrow-right"></i> Next
+				        </li>
+				        <li class="close-btn">
+				          <i class="fa fa-close"></i> Close
+				        </li>
+				     </ul>
+				</div>
 
-			<footer>
-				<img src="images/bottombannerCBR_transparent.png" height="74" width="1024">
-			</footer>
+				<header>
+					<a href="" ng-click="makeAllActiveClasses()"><img src="images/LogoCBR.png" height="138" width="202"></a>
+				</header>
 
-		</div>
+			    <!-- navigation should be in an ngRepeat -->
+				<main class="row">
+					<nav class="col-md-3">
+	    				<ul class="nav nav-pills nav-stacked">
+	    					<a ng-href="/{{folder.class}}" ng-repeat="folder in folders" ng-click="toggleClass($index)">
+	    						<li class="nav-menu-item {{ folder.class }}" ng-class="{inactive: folder.inactive}">
+									<img src="{{folder.thumbnailUrl}}" class="col-md-6">
+									<span class="col-md-6">{{folder.name}}</span>
+	    						</li>
+	    					</a>
+	    				</ul>					
+					</nav>
+					<content class="col-md-9">
+						<div ng-view class="{{viewClass}} row"></div>
+					</content>
+				</main>
+
+				<footer>
+					<img src="images/bottombannerCBR_transparent.png" height="74" width="1024">
+				</footer>
+
+			</div>
+
 
 		<!-- scripts below  -->
 		<!-- main libaries -->
@@ -58,12 +96,17 @@
 
 		<!-- other scripts -->
 		<script src="lib/mflyCommands.js"></script>
+		<script src="lib/jquery.mmenu.min.js"></script>
+		<script src="lib/hamburger-menu.js"></script>
 
 		<!-- main script -->
 		<script src="main.js"></script>
 
 		<!-- services -->
-		<script src="services/main-navigation-service.js"></script>
+		<script src="services/main-navigation-service.js"></script>		
+
+		<!-- directives -->
+		<!-- <script src="directives/hamburger-menu.js"></script> -->
 
 		<!-- controllers scripts -->
 		<script src="controllers/landing-page.js"></script>
@@ -81,6 +124,14 @@
 			document.addEventListener('touchmove', function(event) {
     			event.preventDefault();
 			}, false);
+
+			// function reorient(e) {
+			// 	var landscape = (window.orientation % 90 == 0);
+			//     $("body > div").css("-webkit-transform", !landscape ? "rotate(-90deg)" : "");
+			// }
+  
+  		// 	window.onorientationchange = reorient;
+ 			// window.setTimeout(reorient, 0);
 
 		});
 		</script>

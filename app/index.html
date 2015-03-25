@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="cbrAPP">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="lib/bootstrap.css">
+	<link rel="stylesheet" href="css/styles.css">
+	<link rel="stylesheet" href="css/animate.css">
+
+	<title>Cord Blood Registry</title>
+
+</head>
+	<body>
+		
+		<!-- iPad status bar -->
+		<div class="status-bar">iPad</div>
+
+		<div class="container" ng-controller="landingPageCtrl">
+
+			<header>
+				<a href="" ng-click="makeAllActiveClasses()"><img src="images/LogoCBR.png" height="138" width="202"></a>
+				<div class="close-btn">Close</div>
+			</header>
+
+		    <!-- navigation should be in an ngRepeat -->
+			<main class="row">
+				<nav class="col-md-3">
+    				<ul class="nav nav-pills nav-stacked">
+    					<a ng-href="#/{{folder.class}}" ng-repeat="folder in folders" ng-click="toggleClass($index)">
+    						<li class="nav-menu-item {{ folder.class }}" ng-class="{inactive: folder.inactive}">
+								<img src="{{folder.thumbnailUrl}}" class="col-md-6">
+								<span class="col-md-6">{{folder.name}}</span>
+    						</li>
+    					</a>
+    				</ul>					
+				</nav>
+				<content class="col-md-9">
+					<div ng-view class="{{viewClass}} row"></div>
+				</content>
+			</main>
+
+			<footer>
+				<img src="images/bottombannerCBR_transparent.png" height="74" width="1024">
+			</footer>
+
+		</div>
+
+		<!-- scripts below  -->
+		<!-- main libaries -->
+		<script src="lib/jquery-1.9.1.min.js"></script>
+		<script src="lib/angular.js"></script>
+
+		<!-- angular modules -->
+		<script src="lib/angular-route.js"></script>
+		<script src="lib/angular-animate.js"></script>
+
+
+		<!-- other scripts -->
+		<script src="lib/mflyCommands.js"></script>
+
+		<!-- main script -->
+		<script src="main.js"></script>
+
+		<!-- services -->
+		<script src="services/main-navigation-service.js"></script>
+
+		<!-- controllers scripts -->
+		<script src="controllers/landing-page.js"></script>
+		<script src="controllers/scientific-experience.js"></script>
+		<script src="controllers/patient-counseling.js"></script>
+		<script src="controllers/clinical-resources.js"></script>
+		<script src="controllers/cbr-partnership.js"></script>
+
+		<script>
+		$(document).ready(function(){
+
+			// var HOSTNAME = window.location.origin.indexOf('localhost') ? "http://localhost:8000/" : "mfly://"
+			// mflyCommands.setPrefix(HOSTNAME);
+
+			document.addEventListener('touchmove', function(event) {
+    			event.preventDefault();
+			}, false);
+
+		});
+		</script>
+	</body>
+</html>

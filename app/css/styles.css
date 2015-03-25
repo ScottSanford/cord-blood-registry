@@ -1,0 +1,192 @@
+.status-bar {
+	width:100%;
+	height:20px;
+	background-color:#ccc;
+}
+
+.container {
+	padding-right:0;
+	padding-left:0;
+	width:1024px;
+}
+
+header {
+	width:100%;
+}
+
+header img {
+	margin-left: 40px;
+	margin-top: 40px;
+	margin-bottom:25px;
+}
+
+.close-btn {
+	position: absolute;
+	top:0;
+	right:0;
+}
+
+main {
+	height:auto;
+	width:100%;
+}
+
+.col-md-3, .col-md-4 {
+	padding-left:0;
+	padding-right:0px;
+}
+
+.nav-stacked > li + li {
+	margin-top: 5px;
+}
+
+li span {
+	margin-top: 40px;
+}
+
+.nav > a > li > img {
+	margin-top: 12px;
+	position: relative;
+  	left: 15px;
+}
+
+.nav > a {
+	text-transform: uppercase;
+	padding: 0 0;
+}
+
+.nav-pills > a {
+	border-radius: 0px;
+	color:#fff;
+}
+
+.nav-menu-item {
+	height:113px;
+	margin-bottom:5px;
+}
+
+.landing-page {
+	padding-right:0;
+	width:100%;
+	height:467px;
+}
+
+.scientific-experience {
+	background-color:#AE9FBD;
+}
+
+.patient-counseling {
+	background-color:#736A7F;
+}
+
+.clinical-resources {
+	background-color:#8C2680;
+}
+
+.cbr-partnership {
+	background-color:#422B76;
+}
+
+.inactive {
+	background-color:#BCBCBC;
+}
+
+.col-md-9 {
+	padding-left:15px;
+	padding-right:0;
+}
+
+.main-content {
+	height:467px;
+	background-color:#F4F4F3;
+}
+
+.sub-img {
+/*	border:1px solid blue;
+	height:500px;*/
+}
+
+footer {
+	position: absolute;
+	bottom: 0px;
+}
+
+/*********************************************
+			      SUB PAGES
+**********************************************/
+.landing-page.ng-enter {
+	-webkit-animation: fadeInRight 1.0s;
+	-moz-animation: fadeInRight 1.0s;
+	-o-animation: fadeInRight 1.0s;
+	animation: fadeInRight 1.0s;
+}
+
+.scientific-experience.ng-enter {
+	-webkit-animation: fadeIn 0.5s;
+	-moz-animation: fadeIn 0.5s;
+	-o-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.patient-counseling.ng-enter {
+	-webkit-animation: fadeIn 0.5s;
+	-moz-animation: fadeIn 0.5s;
+	-o-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.clinical-resources.ng-enter {
+	-webkit-animation: fadeIn 0.5s;
+	-moz-animation: fadeIn 0.5s;
+	-o-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.cbr-partnership.ng-enter {
+	-webkit-animation: fadeIn 0.5s;
+	-moz-animation: fadeIn 0.5s;
+	-o-animation: fadeIn 0.5s;
+	animation: fadeIn 0.5s;
+}
+
+.main-container {
+	padding:25px 40px 0 10px;
+}
+
+.main-container span {
+	text-transform: uppercase;
+	font-size:1.2em;
+}
+
+.purple-divider {
+	height:7px;
+	width:100%;
+	background-color:#8D2680;
+	margin-top:3px;
+}
+
+.main-content-list {
+	list-style-type: none;
+	padding:0;
+	padding-top:25px;
+	color:#3A2769;
+	font-weight:bold;
+}
+
+.main-content-list a {
+	color:#3A2769;
+	text-decoration: none;
+}
+
+.main-content-list li {
+	background-color:#E1D9E9;
+	margin-bottom:5px;
+	padding-left:15px;
+	padding-bottom:7px;
+	padding-top:7px;
+	font-size:1.1em;
+}
+
+.side-img {
+	max-height:500px;
+}

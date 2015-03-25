@@ -1,0 +1,1446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)https://courses.thinkful.com/ang-001v1/assignment/4.1.2 -->
+<html ng-app="eagle" lang="en" class="wf-adelle-i4-active wf-adelle-n3-active wf-adelle-n4-active wf-adelle-n6-active wf-fftisawebpro-i4-active wf-fftisawebpro-n4-active wf-fftisawebpro-n7-active wf-sourcesanspro-i3-active wf-sourcesanspro-i4-active wf-sourcesanspro-n3-active wf-sourcesanspro-n4-active wf-sourcesanspro-n6-active wf-sourcesanspro-n7-active wf-active ng-scope"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style type="text/css">@charset "UTF-8";[ng\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\:form{display:block;}</style>
+  <!--<base href="/">--><base href=".">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+
+  <title>Real Time Angular Apps | ANG-001</title>
+  <meta property="description" content="Learn one on one with the world&#39;s best experts.">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <meta property="x-tf-segmentio-token" content="0iha5u7psn">
+  
+
+  
+    <meta property="x-tf-logentries-token" content="ecbb506a-2f1a-4945-99e6-058abb51341e">
+  
+
+  
+    <meta property="x-tf-toucan-host" content="https://profiles.thinkful.com">
+  
+
+  <link rel="stylesheet" href="https://courses.thinkful.com/static/build/eagle.css">
+  <link rel="stylesheet" href="https://courses.thinkful.com/static/webfonts/ss-gizmo.css">
+
+  <script type="text/javascript" async="" src="./Real Time Angular Apps   ANG-001_files/mixpanel-2.2.min.js"></script><script type="text/javascript" id="analytics-js" async="" src="./Real Time Angular Apps   ANG-001_files/analytics.min.js"></script><script type="text/javascript" src="./Real Time Angular Apps   ANG-001_files/fxg2bgq.js"></script>
+  <style type="text/css">.tk-ff-tisa-web-pro{font-family:"ff-tisa-web-pro",serif;}.tk-adelle{font-family:"adelle",serif;}.tk-source-sans-pro{font-family:"source-sans-pro",sans-serif;}</style><link rel="stylesheet" href="https://use.typekit.net/c/099ce5/1w;adelle,2,XKB:P:i4,XK7:P:n3,XK9:P:n4,XKC:P:n6;ff-tisa-web-pro,2,Vdl:P:i4,Vdk:P:n4,Vdp:P:n7;source-sans-pro,2,bmh:P:i3,bmk:P:i4,bmg:P:n3,bmj:P:n4,bml:P:n6,bmn:P:n7/d?3bb2a6e53c9684ffdc9a99fe135b2a6287553ce3904bebab701cabc04f7198de494b54820bc7204f59e06f2ac76ef9d27df202ff7616b8757110119baa9be72399f60d4c6a01cee1b0ec03ddab8a11baf887c27eea3c895145c9697098ac98c29fa2aebc735edc68345795c9955e5a9722d81e4b143012936c557d53ea0ec7e263f7211f117340b20812293be347731b8b3642c49c06d10d7114b1cd70c1d5bc4546311211e81b5234d952134d381070d64b857f1a2dfbde982f3692b14078e8816e9d723992849f00a584cc7c5625aa4fe14cac32a574706170b151a1121b8f9f602077c0882f1fc2db7c64e6621fcfcd0cdd212bf90b658fcf8c1940155120f0a04f03b1752358371d1edeec70aee94fcb1aa7bc9f1b191a9ed49861095fa4a815928ad8c2f34ff4faff846f80e8d94bf4bb04791696270fea1bc57f2cb40d29a12878d836240c3fb3ec5151682b2b76e8d2afb848ae4570c77565152fbc47feeb071db8605da5e78230553f81456b14d949ea1984bec0b8c96a545885206ee076ed1a9b"><script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+
+  <script type="text/javascript">
+  
+  </script>
+<script type="text/javascript" src="chrome-extension://aadgmnobpdmgmigaicncghmmoeflnamj/ng-inspector.js"></script></head>
+<body scroll-reset="">
+  
+<div class="top-level-container" ng-class="{&#39;toc-visible&#39;: tocVisible}">
+  <header class="top-header">
+    <div class="header-bar">
+      <a class="site-logo" href="https://courses.thinkful.com/" track-click="ui:header:logo" track-click-action="goto:home" track-click-element=".site-logo">
+        <div class="site-logo-image"></div>
+      </a>
+      <h1 class="course-title ng-binding" ng-bind="topbarTitle">Learn AngularJS</h1>
+    </div>
+    <nav rel="main-navigation">
+      <ul class="top-nav">
+        <li class="top-nav-item ng-hide" ng-show="user.hasAccess(&#39;mentor&#39;)">
+          <a class="top-nav-link" href="https://activity.thinkful.com/">
+            Student activity
+          </a>
+        </li>
+        <li class="top-nav-item ng-hide" ng-show="user.hasAccess(&#39;mentor&#39;)" track-click="ui:header:mentor-panel" track-click-action="goto:mentor-panel" track-click-element=".top-nav-item-mentor-panel">
+          <a class="top-nav-link" target="_blank" href="https://www.thinkful.com/patel/mentor_panel">
+            My students
+          </a>
+        </li>
+        <li class="top-nav-item top-nav-item-community" track-click="ui:header:community" track-click-action="goto:community" track-click-element=".top-nav-item-community">
+          <a class="top-nav-link" target="_blank" href="https://thinkful-students.slack.com/">
+            Community
+          </a>
+        </li>
+        <li class="top-nav-item top-nav-item-feedback">
+          <span class="top-nav-link" ng-click="$broadcast(&#39;feedback:toggle&#39;)" track-click="ui:header:feedback" track-click-action="open:feedback" track-click-element=".top-nav-item-feedback .top-nav-item">
+            Help
+          </span>
+          <feedback-form class="ng-isolate-scope"><div class="feedback-form-container ng-hide" ng-show="feedback.visible" ng-mouseleave="feedback.state ===&#39;done&#39; &amp;&amp; close(1000)">
+    <div class="feedback-form-modal" ng-class="{&#39;__visible&#39;: feedback.state===&#39;select&#39;}">
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;love&#39;)">
+            <i class="gizmo-icon ss-heart"></i>
+            Send some love.
+        </span>
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;stuck&#39;)">
+            <i class="gizmo-icon ss-chat"></i>
+            I'm stuck on something in the course.
+        </span>
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;mentor-session&#39;)">
+            <i class="gizmo-icon ss-users"></i>
+            I have feedback on my mentor session.
+        </span>
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;curriculum&#39;)">
+            <i class="gizmo-icon ss-book"></i>
+            I found an issue with the curriculum.
+        </span>
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;bug&#39;)">
+            <i class="gizmo-icon ss-lemon"></i>
+            I found a bug.
+        </span>
+        <span class="feedback-select-item" ng-click="setFeedbackAs(&#39;other&#39;)">
+            <i class="gizmo-icon ss-help"></i>
+            Other
+        </span>
+    </div>
+    <div class="feedback-form-modal " ng-class="{&#39;__visible&#39;: feedback.state===&#39;form&#39;}">
+        <h3 class="ng-binding">
+            Did we miss something?
+        </h3>
+        <form class="eagle-form ng-pristine ng-valid ng-valid-required" ng-submit="submit()">
+            <p class="enrollment-label">What would you like us to know?</p>
+            <textarea class="eagle-form-item feedback-form-input ng-pristine ng-untouched ng-valid ng-valid-required" ng-model="feedback.message" name="message" ng-required=""></textarea>
+            <label name="srsly" class="enrollment-label">
+                <input name="srsly" class="eagle-button ng-pristine ng-untouched ng-valid" type="checkbox" ng-model="feedback.urgent">
+                This is urgent.
+            </label>
+            <input class="eagle-form-item eagle-button" type="submit" value="Send">
+        </form>
+    </div>
+    <div class="feedback-form-modal feedback-form-done" ng-class="{&#39;__visible&#39;: feedback.state===&#39;done&#39;}" ng-click="feedback.state===&#39;done&#39; &amp;&amp; close()">
+        <h3>Thank you.</h3>
+        <p>
+            Every piece of feedback helps make Thinkful better.
+        </p>
+        <p>
+            We appreciate you taking the time to let us know your thoughts.
+            One of our team members should reply within 24 hours.
+        </p>
+    </div>
+</div></feedback-form>
+        </li>
+        <li class="top-nav-item top-nav-item-settings">
+          <a class="top-nav-link" href="https://settings.thinkful.com/">
+            Settings
+          </a>
+        </li>
+        <li class="top-nav-item .top-nav-item-logout" track-click="ui:header:logout" track-click-action="user:logout">
+          <a class="top-nav-link" target="_self" href="https://courses.thinkful.com/logout">
+            Logout
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- uiView:  --><div ui-view="" class="ng-scope"><div class="course-navigation-container ng-scope" nav-resize="" style="transform: translate(-320px, 0px); -webkit-transform: translate(-320px, 0px);">
+  <a class="toc-toggle" ng-click="$emit(&#39;toc:toggle&#39;);" track-click="ui:toc" track-click-action="toggle" track-click-element=".toc-toggle">
+    <i class="gizmo-icon ss-navigateright" ng-show="isNavScrollVisible === 0 &amp;&amp; !tocVisible"></i>
+    <i class="gizmo-icon ss-navigateleft ng-hide" ng-show="isNavScrollVisible === 0 &amp;&amp; tocVisible"></i>
+    <i class="gizmo-icon ss-navigateup ng-hide" ng-show="isNavScrollVisible === 1 &amp;&amp; tocVisible"></i>
+    <i class="gizmo-icon ss-navigatedown ng-hide" ng-show="isNavScrollVisible ===-1 &amp;&amp; tocVisible"></i>
+  </a>
+  <!-- uiView: course-nav --><nav class="course-navigation ng-scope" rel="course-navigation" ui-view="course-nav"><!-- course_navigation -->
+<div class="contents search-hidden ng-scope" ng-class="{&#39;search-hidden&#39;: !searchEnabled}">
+  <search class="ng-scope"><form ng-class="{focus:focus}" class="input-box ng-pristine ng-valid focus" ng-submit="submit()">
+  <i class="gizmo-icon ss-search"></i>
+  <input id="tocSearchInput" type="text" name="as_q" class="search-query ng-pristine ng-untouched ng-valid" placeholder="Search" ng-focus="focus()" ng-blur="blur()" ng-model-options="{ updateOn: &#39;default blur&#39;, debounce: {&#39;default&#39;: 50, &#39;blur&#39;: 5500} }" ng-change="search(q)" ng-model="q" track-focus="ui:search" track-focus-action="open" track-blur="ui:search" track-blur-action="close">
+</form>
+
+<!-- ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' --><div class="nav-unit-divide ng-scope" ng-repeat-start="nodeRef in searchable" ng-if="nodeRef.type === &#39;unit&#39;">
+  <!-- ngIf: nodeRef.type === 'unit' --><hr ng-if="nodeRef.type === &#39;unit&#39;" class="ng-scope"><!-- end ngIf: nodeRef.type === 'unit' -->
+  <div class="unit-index ng-binding">
+    Unit 1
+  </div>
+</div><!-- end ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="unit" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/unit/1">
+    Introducing AngularJS
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/1.1">
+    Web Basics Review
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.1.1">
+    HTML Review
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.1.2">
+    Web Basics Coding Challenge
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/1.2">
+    Up and Running with Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.2.1">
+    Dev Environment Setup
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.2.2">
+    AngularJS: MVC on the Client-Side
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.2.3">
+    Introduction to Angular Templating and Databinding
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.2.4">
+    Learn More About Binding in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.2.5">
+    Working with Angular's Builtin Filters
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="6" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.2.6">
+    Templating Basics Challenge
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="7" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.2.7">
+    ngMadLibs
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/1.3">
+    Scope, Controllers, and Modules
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.3.1">
+    Controller Basics in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.3.2">
+    Working with Modules, Controllers, and Scope
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.3.3">
+    Mad Libs Refactor 1: Add a Controller
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.3.4">
+    Multiplication Table App Code Along
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.3.5">
+    HTML5 Form Basics in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="6" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.3.6">
+    Mad Libs App Refactor 2: A Better User Experience
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="7" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.3.7">
+    Waitstaff Calculator
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/1.4">
+    Animation Basics in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.4.1">
+    Animating with CSS
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.4.2">
+    Animations in AngularJS using ngAnimate
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.4.3">
+    Animate Your Mad Libs App
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/1.5">
+    XHR Basics in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.5.1">
+    HTTP, REST, and XHR
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.5.2">
+    XHR Basics with $http
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.5.3">
+    A First Pass at Promises
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/1.5.4">
+    Deeper into Promises
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/1.5.5">
+    Instagram Searcher
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' --><div class="nav-unit-divide ng-scope" ng-repeat-start="nodeRef in searchable" ng-if="nodeRef.type === &#39;unit&#39;">
+  <!-- ngIf: nodeRef.type === 'unit' --><hr ng-if="nodeRef.type === &#39;unit&#39;" class="ng-scope"><!-- end ngIf: nodeRef.type === 'unit' -->
+  <div class="unit-index ng-binding">
+    Unit 2
+  </div>
+</div><!-- end ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="unit" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/unit/2">
+    Practical Single Page Web Apps in Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/2.1">
+    Routing and Views
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.1.1">
+    Open Weather Map: Project Setup with Bower
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.1.2">
+    Open Weather Map: Routing and Views
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.1.3">
+    Add Routes to Waitstaff Tool
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.1.4">
+    Open Weather Map: Animating Route Changes
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/2.1.5">
+    Animate Waitstaff Tool
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/2.2">
+    Services, Dependency Injection, and Build Processes
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.2.1">
+    Examine Data Sharing with Services in the Weather App
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.2.2">
+    Project File Structure and Build Process for Angular Apps
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/2.2.3">
+    Countries &amp; Capitals App
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/2.3">
+    Testing Angular Web Apps
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.3.1">
+    Testing JavaScript Applications
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.3.2">
+    Introducing Jasmine &amp; Karma
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.3.3">
+    Unit Testing AngularJS Applications
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/2.3.4">
+    Write Tests for Capitals and Countries
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' --><div class="nav-unit-divide ng-scope" ng-repeat-start="nodeRef in searchable" ng-if="nodeRef.type === &#39;unit&#39;">
+  <!-- ngIf: nodeRef.type === 'unit' --><hr ng-if="nodeRef.type === &#39;unit&#39;" class="ng-scope"><!-- end ngIf: nodeRef.type === 'unit' -->
+  <div class="unit-index ng-binding">
+    Unit 3
+  </div>
+</div><!-- end ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="unit" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/unit/3">
+    Bringing UIs to Life With Angular Directives
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/3.1">
+    Basic Directives
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.1.1">
+    Directives 101
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/3.1.2">
+    Simple Signup Form
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.1.3">
+    Directives 102: Bringing in Scope
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/3.1.4">
+    megaVideo 1: Directives and Scope
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.1.5">
+    Editable Item Directive
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/3.2">
+    Deeper into Directives
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.2.1">
+    Understanding the Digest Cycle
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.2.2">
+    Unit Testing Directives
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.2.3">
+    Practice Unit Testing Directives
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.2.4">
+    Directive Controllers and Inter-Directive Communication
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="5" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/3.2.5">
+    Calendar Directive
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/3.3">
+    Loose Ends
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.3.1">
+    Authentication
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.3.2">
+    End to End Testing with Protractor
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/3.3.3">
+    Practice E2E Testing with Protractor
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' --><div class="nav-unit-divide ng-scope" ng-repeat-start="nodeRef in searchable" ng-if="nodeRef.type === &#39;unit&#39;">
+  <!-- ngIf: nodeRef.type === 'unit' --><hr ng-if="nodeRef.type === &#39;unit&#39;" class="ng-scope"><!-- end ngIf: nodeRef.type === 'unit' -->
+  <div class="unit-index ng-binding">
+    Unit 4
+  </div>
+</div><!-- end ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="unit" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="4" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/unit/4">
+    Extending Angular and Capstone
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/4.1">
+    Extending Angular
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.1">
+    Reusability and Code Quality
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding selected" href="./Real Time Angular Apps   ANG-001_files/Real Time Angular Apps   ANG-001.html">
+    Real Time Angular Apps
+    <!-- ngIf: node.uuid === nodeRef.uuid --><nav-scroll ng-if="node.uuid === nodeRef.uuid" class="ng-scope"></nav-scroll><!-- end ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.3">
+    Popular Frameworks and Component Libraries
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark complete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="lesson" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/lesson/4.2">
+    Capstone Project
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="1" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/4.2.1">
+    Plan and Architect Your Capstone Project
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="assignment" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="2" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/assignment/4.2.2">
+    Capstone V1
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable --><!-- ngIf: nodeRef.type === 'unit' -->
+<div class="noderef ng-scope" ng-repeat-end="" ng-hide="!q &amp;&amp; !searchEnabled &amp;&amp; nodeRef.search.score &lt;= 0" data-node-type="project" track-click="ui:toc" track-click-action="navigate" track-click-element=".noderef">
+
+  <a ui-sref="course.base.view({ type: nodeRef.type, pathIndex: nodeRef.pathIndex })" ui-sref-active="selected" data-index="3" class="ng-binding" href="https://courses.thinkful.com/ang-001v1/project/4.2.3">
+    Capstone V2
+    <!-- ngIf: node.uuid === nodeRef.uuid -->
+    <div class="match-score" style="width: 0%;
+        opacity: 0;"></div>
+  </a>
+  <!-- ngIf: sprint.end.uuid === nodeRef.uuid -->
+  <svg class="progress-checkmark incomplete" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 40" enable-background="new 0 0 50 40" xml:space="preserve">
+    <rect x="-0.5" y="22" transform="matrix(-0.7071 -0.7071 0.7071 -0.7071 2.6189 54.6342)" fill="#2DB996" width="26.2" height="9.5"></rect>
+    <rect x="8.7" y="15.5" transform="matrix(0.7071 -0.7071 0.7071 0.7071 -5.3053 27.7997)" fill="#2DB996" width="44.5" height="9.5"></rect>
+  </svg>
+</div><!-- end ngRepeat: nodeRef in searchable -->
+</search>
+</div>
+</nav>
+</div>
+<article class="main-flow course-content ng-scope" poll-location="">
+  <!-- uiView: course-redirect --><div ui-view="course-redirect" class="ng-scope"></div>
+  <!-- uiView: course-nav-buttons --><div ui-view="course-nav-buttons" track-click="ui:navigate" track-click-action="previous/next" track-click-element="[ui-view=course-nav-buttons]:first-child" class="ng-scope"><div class="course-nav-buttons ng-scope">
+    <a class="course-prev-button" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.1" ui-sref="course.base.view(node.preOrderPrevious().getPathObject())" track-click="ui:navigate" track-click-action="previous" track-click-element=".course-prev-button">
+      <i class="gizmo-icon ss-navigateleft"></i>&nbsp;Previous
+    </a>
+    <a class="course-next-button" ui-sref="course.base.view(node.preOrderNext().getPathObject())" track-click="ui:navigate" track-click-action="next" track-click-element=".course-next-button" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.3">
+      Next&nbsp;<i class="gizmo-icon ss-navigateright"></i>
+    </a>
+</div></div>
+  <!-- ngIf: !!node --><div class="breadcrumbs ng-scope" ng-if="!!node">
+    <!-- ngRepeat: n in [node].concat(node.getAncestors()).reverse().slice(1) --><a class="breadcrumb ng-binding ng-scope" alt="Extending Angular and Capstone" ng-repeat-start="n in [node].concat(node.getAncestors()).reverse().slice(1)" ui-sref="course.base.view(n.getPathObject())" track-click="ui:navigate" track-click-action="breadcrumb" track-click-node-type="unit" track-click-element=".breadcrumb" href="https://courses.thinkful.com/ang-001v1/unit/4">Unit 4</a>
+    <!-- ngIf: !$last --><span class="breadcrumb-divider ng-scope" ng-if="!$last" ng-repeat-end="">/</span><!-- end ngIf: !$last --><!-- end ngRepeat: n in [node].concat(node.getAncestors()).reverse().slice(1) --><a class="breadcrumb ng-binding ng-scope" alt="Extending Angular" ng-repeat-start="n in [node].concat(node.getAncestors()).reverse().slice(1)" ui-sref="course.base.view(n.getPathObject())" track-click="ui:navigate" track-click-action="breadcrumb" track-click-node-type="lesson" track-click-element=".breadcrumb" href="https://courses.thinkful.com/ang-001v1/lesson/4.1">Lesson 1</a>
+    <!-- ngIf: !$last --><span class="breadcrumb-divider ng-scope" ng-if="!$last" ng-repeat-end="">/</span><!-- end ngIf: !$last --><!-- end ngRepeat: n in [node].concat(node.getAncestors()).reverse().slice(1) --><a class="breadcrumb ng-binding ng-scope" alt="Real Time Angular Apps" ng-repeat-start="n in [node].concat(node.getAncestors()).reverse().slice(1)" ui-sref="course.base.view(n.getPathObject())" track-click="ui:navigate" track-click-action="breadcrumb" track-click-node-type="assignment" track-click-element=".breadcrumb" href="./Real Time Angular Apps   ANG-001_files/Real Time Angular Apps   ANG-001.html">Assignment 2</a>
+    <!-- ngIf: !$last --><!-- end ngRepeat: n in [node].concat(node.getAncestors()).reverse().slice(1) -->
+  </div><!-- end ngIf: !!node -->
+  <!-- uiView: course-content --><div ui-view="course-content" class="ng-scope"><header class="ng-scope">
+  <h1 class="node-name ng-binding">Real Time Angular Apps</h1>
+
+  <span class="course-meta-item">
+    <i class="gizmo-icon ss-clock"></i>
+    Estimated Time: <strong class="ng-binding">2-3 hours</strong>
+  </span>
+</header>
+<hr class="ng-scope">
+<div compile="node.content | concatContent" class="ng-scope"><p class="ng-scope">The defining feature of a <em>real time</em> web app is that the contents of a page can update as soon as data on the backend changes. Whereas the Angular apps you've encountered so far have relied on AJAX calls to the backend server, for real time apps (RTAs), you take advantage of <em>WebSockets</em> to maintain a persistent, two-way connection to the backend. While this sounds simple enough, the devil is in the details.</p>
+<p class="ng-scope">Some practical use cases for RTAs are:</p>
+<ul class="ng-scope">
+<li>Live chat</li>
+<li>Financial live updates</li>
+<li>Multiplayer gaming</li>
+<li>Social media feeds</li>
+<li>Live analytical data</li>
+<li>Alerts and notifications</li>
+</ul>
+<p class="ng-scope">In this assignment, you'll first consider how Angular can interact with WebSockets, and then you'll go on to look at some existing tools you can use to build a real time Angular app.  Finally you will look at a simple Firebase integration in more detail as well as Google+ authentication and security.</p>
+<h6 id="however-we-will-not-be-discussing-the-nature-of-reality-or-time-in-this-assignment-" class="ng-scope">However we will not be discussing the nature of reality or time in this assignment.</h6>
+<h1 id="websockets-angularjs" class="ng-scope">WebSockets + AngularJS</h1>
+<p class="ng-scope">A standard Angular app uses AJAX (via $http) to download new data from the backend which is then placed in the scope. This typically means that all the data, based on the state of the application or the URL within the browser, is downloaded in one go and then used within the application scope.</p>
+<p class="ng-scope">In RTAs, the front-end code is expected to keep a persistent connection to the backend and relay updates in code to the appropriate parts of the application. In other words, when the ResourceA updates on the server (something like a list of comments for example) then the next thing to do is to update the binding on the front-end with the new updates of ResourceA so that the application can render the new data. So, in a nut-shell, all RTAs do is just synchronize themselves with the backend using WebSockets. The major difference, however, is that Web Sockets are designed to transport small amounts of data.</p>
+<p class="ng-scope">Therefore in order to get a broad understanding of what’s out there, let’s examine some existing tools you can use to take the difficulty out of building real time Angular apps.</p>
+<p class="ng-scope">There are a number of ways to achieve real time synchronization and all of which will require remote data persistence.  Two of the more simple ways to implement RTAs on the web stack are: <a href="http://pusher.com/" alt="" target="_blank"> Pusher.js </a> which does not persist for you and <a href="https://www.firebase.com/" alt="" target="_blank"> Firebase </a> which can easily handle all of your data persistence with their provided back-end.</p>
+<h1 id="firebase-angularfire-" class="ng-scope">Firebase (AngularFire)</h1>
+<p class="ng-scope"><a href="https://www.firebase.com/" alt="" target="_blank"> Firebase </a> is a commercial backend-as-a-service platform for building real-time applications. <a href="https://www.firebase.com/docs/web/libraries/angular/index.html" alt="" target="_blank"> AngularFire </a> is a plugin maintained by Firebase that integrates Angular and Firebase. Firebase's approach to storing and relaying real-time data is to persist data on their own backend and then have your front-end Angular code connect to that backend using WebSockets. This means that you don’t necessarily need a backend at all or, at the very least, you don’t need to connect your backend to Firebase.</p>
+<p class="ng-scope">We'll walk you through some of the pieces of Angular Fire later in this assignment.</p>
+<h1 id="pusher-js" class="ng-scope">Pusher.js</h1>
+<p class="ng-scope"><a href="http://pusher.com/" alt="" target="_blank"> Pusher.js </a> is essentially just WebSockets + a transport channel. Data gets placed in a pusher channel and then relayed to all connected channels before being erased from the server’s memory. This means that, unlike Firebase, none of the data is persisted on Pusher's server.</p>
+<p class="ng-scope">Since Pusher doesn’t persist the data, it is up to you to configure your backend code to relay data to Pusher whenever any of the model data is updated. Once relayed, Pusher will automatically push it out to any connections that are connected to it via WebSockets (or any other socket-based system). In short, Pusher is just an easy to use notification platform.</p>
+<p class="ng-scope">Keep in mind that, since data transported through Pusher is entirely managed by the developer, the front-end code will have to listen on its own channels to detect when new data is coming in from the backend. This approach can make an application become complicated if done incorrectly.</p>
+<p class="ng-scope">Here are some resources to get you started:</p>
+<ul class="ng-scope">
+<li><p>Core Angular contributor Matias Niemela's <a href="https://www.youtube.com/watch?v=8uj7YSqby7s" alt="" target="_blank"> presentation </a> on Pusher and Angular.</p>
+</li>
+<li><p>Pusher <a href="http://blog.pusher.com/making-angular-js-real" alt="" target="_blank"> blog post </a> on integrating Angular, Pusher, and Node</p>
+</li>
+</ul>
+<h1 id="setting-up-your-own-web-sockets" class="ng-scope">Setting up your own Web Sockets</h1>
+<p class="ng-scope">If you have the time and skill to configure your backend to relay data using its own WebSockets then the end result is similar to using Pusher. There is also <a href="http://www.pubnub.com/docs/javascript/javascript-sdk.html" alt="" target="_blank"> Pubnub.js </a> which is very similar to PusherJS; both of which have existing Angular integrations. Some alternatives to using Pusher
+are <a href="http://socket.io/" alt="" target="_blank"> Socket.IO </a> and <a href="https://github.com/sockjs/sockjs-client" alt="" target="_blank"> SockJS </a>; both of which have numerous back-end implamentations which you will also need to setup.  However, the major difference is that you are not paying for a 3rd party service.</p>
+<p class="ng-scope">That being said, builiding your own implementation of Pusher from scratch is probably not worth the time and maintenance investment. Unless you have a specific reason to not use an existing service like Pusher (for instance, handling sensitive information that you don't want to expose to a third party service), </p>
+<p class="ng-scope">Building your own implementation of Web Sockets can potentially expose security risks and scaling issues as well as number of event complications. So, it's recommended to use an off the shelf solution like Firebase or Pusher for building real time Angular apps.</p>
+<h1 id="working-with-firebase" class="ng-scope">Working with Firebase</h1>
+<p class="ng-scope">Firebase is a free service that lets you save your data on a remote server that can then be shared between various users of your App and potentially other SPAs you may want to access this data.  It can support and facilitate user logins, data security and real time data messaging.</p>
+<p class="ng-scope">To set up firebase you need to install the appropriate libraries into your Angular application as well as create a remote data store.  The said store will be made available to use via a Firebase URL which you will connect to in your applications.</p>
+<h2 id="create-a-firebase-database-and-url" class="ng-scope">Create a Firebase 'database' and URL</h2>
+<ol class="ng-scope">
+<li>Create an account at <a href="https://www.firebase.com/signup/" alt="" target="_blank"> https://www.firebase.com/signup/ </a></li>
+<li>Copy the <code ng-non-bindable="">[domain].firebaseIO.com</code>, this is Firebase App URL</li>
+<li>Alternatively, you can also create a new Firebase App to get another free URL</li>
+</ol>
+<h2 id="some-help-from-angularfire" class="ng-scope">Some Help from AngularFire</h2>
+<p class="ng-scope">The standard method of integrating Firebase into a JavaScript SPA involves managing events manually and to achieve this in Angular takes managing both connections and $watches.  So you can instead use the AngularFirebase service.</p>
+<p class="ng-scope">At some point in your application setup cycle, run the following bower command:</p>
+<pre class="hljs ng-scope" ng-non-bindable="">bower install angularfire -S</pre><h6 id="unless-you-wish-to-use-the-cdn-service-for-angular-firebase-in-which-case-you-may-skip-the-above-step-and-use-the-urls-provided-at-their-firebase-api-documentation-https-www-firebase-com-docs-web-bindings-angular-api-html-firebase-" class="ng-scope">Unless you wish to use the CDN service for angular firebase, in which case you may skip the above step and use the URLs provided at their <a href="https://www.firebase.com/docs/web/bindings/angular/api.html#firebase" alt="" target="_blank"> Firebase API documentation </a>.</h6>
+<p class="ng-scope">This will download all the relevant files into your application. The <code ng-non-bindable="">-S</code> flag saves the install dependencies to any bower.json files you have for the project.  Then add the following script files to your HTML.</p>
+<pre class="hljs ng-scope" ng-non-bindable=""><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"[vendor]/angular/angular.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"[vendor]/firebase/firebase.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"[vendor]/angularfire/dist/angularfire.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></pre><h6 id="be-sure-to-update-the-above-links-to-point-to-your-bower-installation-folder-" class="ng-scope">Be sure to update the above links to point to your bower installation folder.</h6>
+<p class="ng-scope">This will install everything you need to use the pre-made $firebase Angular directive.  The said directive can then provide automatic sync between Angular's <code ng-non-bindable="">$scope</code> model bindings and the Firebase URL you have created.</p>
+<p class="ng-scope">You will need to add the dependency for your module to the 'firebase' service:</p>
+<pre class="hljs ng-scope" ng-non-bindable=""><span class="hljs-keyword">var</span> MyModule = angular.module(<span class="hljs-string">'MyModule'</span>, [ <span class="hljs-string">'firebase'</span> ]);</pre><p class="ng-scope">This will now make the <code ng-non-bindable="">$firebase</code> service available for injection after the 'config' stage has completed.  This service takes a <em>Firebase reference object</em> that is tied to a URL.  You= can create <em>Firebase reference object</em>s using the global Firebase constructor function. Let's do just that; you will put this Firebase reference object inside a simple factory that can be used throughout your module.</p>
+<pre class="hljs ng-scope" ng-non-bindable="">MyModule
+    <span class="hljs-comment">// change this to your Firebase URL</span>
+    .constant(<span class="hljs-string">'FIREBASE_URL'</span>, <span class="hljs-string">'...firebaseIO.com'</span>)
+    .factory(<span class="hljs-string">'firebaseReference'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(FIREBASE_URL)</span></span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Firebase( FIREBASE_URL );
+    })</pre><p class="ng-scope">Now you can use the 'firebaseReference' service to connect to your Firebase endpoint and persist your data at Firebase! To use your new reference you can pass it to the $firebase service. Here's the full API documentation for the $firebase service; <a href="https://www.firebase.com/docs/web/bindings/angular/api.html#firebase" alt="" target="_blank"> Firebase API documentation </a>.</p>
+<p class="ng-scope">The following code passes the firebaseReference to the $firebase service and then saves it to your controller scope.</p>
+<pre class="hljs ng-scope" ng-non-bindable="">MyModule.controller(<span class="hljs-string">'FireCtrl'</span>, 
+<span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope, $firebase, firebaseReference)</span></span>{
+    $scope.myData = $firebase(firebaseReference).$asObject();
+})</pre><p class="ng-scope">Here you pass your reference to the <code ng-non-bindable="">$firebase</code> service and then use the new and improved <code ng-non-bindable="">$firebase</code> API method <code ng-non-bindable="">$asObject</code> to convert the firebase data into a Firebase Object. Now, set a quick and dirty binding in your HTML to take a look.  You'll see that right now it will contain no data:</p>
+<pre class="hljs ng-scope" ng-non-bindable=""><span class="hljs-tag">&lt;<span class="hljs-title">pre</span> <span class="hljs-attribute">ng-controller</span>=<span class="hljs-value">"FireCtrl"</span>&gt;</span>
+    {{ myData | json }}
+<span class="hljs-tag">&lt;/<span class="hljs-title">pre</span>&gt;</span></pre><h2 id="saving-data-to-firebase" class="ng-scope">Saving Data to Firebase</h2>
+<p class="ng-scope">You can access your Firebase <em>forge</em> by opening the Firebase URL you created, in a browser, in a new tab and you will see the endpoint's Dashboard. Here you can CRUD your data manually, quickly add a row by pressing the green plus symbol inside the Web interface and give your data a name and value. If you navigate back to your Angular application, you will see that the <code ng-non-bindable="">myData</code> will have updated to your new data without you needing to refresh the page! Just like magic! This was pushed from Firebase to the application and the <code ng-non-bindable="">$firebase</code> service has already handled this event for us.</p>
+<p class="ng-scope">Alternatively you can set an Array of data by writing an array literal in the value of the forge's data and then using the <code ng-non-bindable="">$asArray</code> method instead of <code ng-non-bindable="">$asObject</code> in your code. But clearly, you don't want to write into your datastore manually every time!  And yet again the <code ng-non-bindable="">$firebase</code> service can help you here greatly!</p>
+<h4 id="a-chat-directive" class="ng-scope">A Chat Directive</h4>
+<p class="ng-scope">Here you make use of the child method on the Firebase reference to create a value named 'messages'.  The child method will return a new firebase reference object that you then pass into $firebase.</p>
+<p class="ng-scope">Here's a quick chat directive example:</p>
+<h6 id="the-directive-s-template-html-is-further-below-" class="ng-scope">The directive's template HTML is further below.</h6>
+<pre class="hljs ng-scope" ng-non-bindable="">angular.module(<span class="hljs-string">'MyModule'</span>, [ <span class="hljs-string">'firebase'</span> ])
+    <span class="hljs-comment">// change this to your Firebase URL</span>
+    .constant(<span class="hljs-string">'FIREBASE_URL'</span>, <span class="hljs-string">'...firebaseIO.com'</span>)
+    .factory(<span class="hljs-string">'firebaseRef'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( FIREBASE_URL )</span> </span>{
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">new</span> Firebase( FIREBASE_URL );
+    })
+    .directive(<span class="hljs-string">'chat'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">( )</span> </span>{
+<span class="hljs-pi">        'use strict'</span>;
+        <span class="hljs-keyword">return</span> {
+            restrict: <span class="hljs-string">'E'</span>,
+            templateUrl: <span class="hljs-string">"chat.tmpl.html"</span>,
+            scope: {},
+            controllerAs: <span class="hljs-string">'ctrl'</span>,
+            controller: <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">($scope, $firebase, firebaseRef)</span></span>{
+                $scope.messages = $firebase(
+                    firebaseRef.child(<span class="hljs-string">'messages'</span>)
+                ).$asArray();
+                <span class="hljs-keyword">this</span>.sendMessage = <span class="hljs-function"><span class="hljs-keyword">function</span><span class="hljs-params">(send)</span></span>{
+                    <span class="hljs-comment">// do some validation</span>
+                    <span class="hljs-keyword">if</span> ( !send.message ) <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;
+                    <span class="hljs-comment">// save the message</span>
+                    $scope.messages.$add({
+                        message: send.message.trim(),
+                        userName: send.userName,
+                        datetime: <span class="hljs-built_in">Date</span>.now()
+                    });
+                    $scope.send.message = <span class="hljs-string">""</span>;
+                }
+            }
+        };
+    })</pre><p class="ng-scope">In this directive you use <code ng-non-bindable="">new Firebase( FIREBASE_URL )</code> to create a reference object; to the firebase (database) that you can view at <code ng-non-bindable="">https://&lt;domain&gt;.firebaseio.com</code>.  You then use <code ng-non-bindable="">firebaseRef.child('messages')</code> inside your controller to create a new 'child' (value) in the Firebase endpoint with a name of 'messages'.  This could be considered similar to a database table with the name of 'messages'.  So, now you're using a firebase reference object that points to the 'messages' value instead of your Firebase root value!  </p>
+<p class="ng-scope"><code ng-non-bindable="">$firebase</code> creates a connection to the child reference of 'messages' and <code ng-non-bindable="">$asArray()</code> returns a new binding on the scope.  In other words, when you add data to the firebase backend, it will also update <code ng-non-bindable="">$scope.messages</code>. Firebase will be pushing these changes to the reference object and the $scope binding will be automatically updated, then the view simply iterates over these messages to display them as they change.</p>
+<p class="ng-scope">Many of the $firebase methods return a promise which you can also hook into with methods such as $loaded, as described in <a href="https://www.firebase.com/blog/2014-07-30-introducing-angularfire-08.html" alt="" target="_blank"> this article </a> released by the firebase team.</p>
+<h6 id="note-the-angularfire-library-was-recently-updated-so-many-of-the-existing-resources-discussing-angularfire-are-no-longer-relevant-the-article-linked-to-in-the-above-text-is-regarding-the-latest-release-" class="ng-scope">NOTE: The AngularFire library was recently updated so many of the existing resources discussing AngularFire are no longer relevant; the article  linked to in the above text is regarding the latest release.</h6>
+<p class="ng-scope">Finally the sendMessage method will add a new message to your endpoint via the <code ng-non-bindable="">$add</code> method which persists to the firebase store!</p>
+<p class="ng-scope">Here's the HTML for <code ng-non-bindable="">chat.tmpl.html</code> so you can quickly set it up:</p>
+<pre class="hljs ng-scope" ng-non-bindable=""><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">id</span>=<span class="hljs-value">"messages"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">class</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">ng-repeat</span>=<span class="hljs-value">"m in messages"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">strong</span>&gt;</span>{{ m.userName }}<span class="hljs-tag">&lt;/<span class="hljs-title">strong</span>&gt;</span> 
+        <span class="hljs-tag">&lt;<span class="hljs-title">em</span>&gt;</span>{{ m.datetime | date }}<span class="hljs-tag">&lt;/<span class="hljs-title">em</span>&gt;</span> : 
+        <span class="hljs-tag">&lt;<span class="hljs-title">span</span>&gt;</span>{{ m.message }}<span class="hljs-tag">&lt;/<span class="hljs-title">span</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-title">form</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"chatForm"</span> <span class="hljs-attribute">ng-submit</span>=<span class="hljs-value">"ctrl.sendMessage(send)"</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-title">fieldset</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"userName"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span>
+            <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"send.userName"</span> 
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"userName"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Name"</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">required</span> <span class="hljs-attribute">name</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"text"</span> 
+            <span class="hljs-attribute">ng-model</span>=<span class="hljs-value">"send.message"</span> 
+            <span class="hljs-attribute">id</span>=<span class="hljs-value">"message"</span> <span class="hljs-attribute">placeholder</span>=<span class="hljs-value">"Message&amp;hellip;"</span>&gt;</span>
+        <span class="hljs-comment">&lt;!-- submit button: pressing return submits --&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-title">input</span> <span class="hljs-attribute">hidden</span> <span class="hljs-attribute">type</span>=<span class="hljs-value">"submit"</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-title">fieldset</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-title">form</span>&gt;</span></pre><p class="ng-scope">Open up your App with a different session (a new user in chrome or a different browser completely) and talk to yourself watching the data sync between both sessions via the Firebase endpoint!</p>
+<p class="ng-scope">It is also possible to <strong>skip</strong> the <code ng-non-bindable="">$add</code> step described above (also $set, $remove, etc…) by creating a 3-way-data-binding with the <a href="https://www.firebase.com/docs/web/libraries/angular/api.html#angularfire-firebaseobject-bindto-scope-varname" alt="" target="_blank"> $bindTo </a> method. You can create scope data that only needs be manipulated directly and it's changes are persisted to the backend.</p>
+<h3 id="security" class="ng-scope">Security</h3>
+<p class="ng-scope">When looking at your Firebase URL in the browser, this is called the forge and you are provided with a number of configuration settings and options.  One of the advanced features here is to make use of the security capabilities of Firebase.  You can disable writing of data by changing or removing <code ng-non-bindable="">".write"</code> from your rules so that it evaluates to false.  This is a bespoke security language created by the Firebase team that allows very complex queries based on user's sessions, data validation, times and more.  You can find more information on this at the <a href="https://www.firebase.com/docs/security/guide.html" alt="" target="_blank"> Firebase security guide </a> .</p>
+<p class="ng-scope">You won't be going into much detail here but it's worth knowing that you use much JavaScript syntax inside strings and many keys are generated for you, such as the <code ng-non-bindable="">$valueid</code> for any children in "value".</p>
+<p class="ng-scope">One common practice may be to set write access to authenticated users only.  In the chat directive described above, you could make your messages object only writable by those who have logged in by using the settings below:</p>
+<pre class="hljs ng-scope" ng-non-bindable="">{
+    "<span class="hljs-attribute">rules</span>": <span class="hljs-value">{
+        "<span class="hljs-attribute">.read</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">.write</span>": <span class="hljs-value"><span class="hljs-literal">true</span></span>,
+        "<span class="hljs-attribute">messages</span>" : <span class="hljs-value">{
+            "<span class="hljs-attribute">.write</span>": <span class="hljs-value"><span class="hljs-string">"auth != null"</span></span>,
+        }
+    </span>}
+</span>}</pre><p class="ng-scope">This makes use of the auth variable that is provided by the security rules to enforce that the messages value can only be written to by users who are currently logged in!... but how do they login?</p>
+<h3 id="google-authentication" class="ng-scope">Google Authentication</h3>
+<p class="ng-scope">You can use Firebase to login your application through many services such as Google+, Facebook, Twitter and even creating Email subscription lists.</p>
+<pre class="hljs ng-scope" ng-non-bindable=""><span class="hljs-tag">&lt;<span class="hljs-title">script</span> <span class="hljs-attribute">src</span>=<span class="hljs-value">"[vendor]/firebase-simple-login/firebase-simple-login.js"</span>&gt;</span><span class="javascript"></span><span class="hljs-tag">&lt;/<span class="hljs-title">script</span>&gt;</span></pre><p class="ng-scope">To use it you must include the above file, which will provide another angular directive.  This directive can then easily be used to create a login for your application.  Much like the $firebase service, the $firebaseSimpleLogin requires a Firebase reference object to connect to an endpoint.</p>
+<p class="ng-scope">You will need to go into your forge and open the <em>Simple Login</em> area where you can enable various authentication endpoints for your application.  The Firebase website has <a href="https://www.firebase.com/docs/web/guide/simple-login/google.html" alt="" target="_blank"> useful instructions </a> on how to setup Google as a back-end using their Website Interface.</p>
+<pre class="hljs ng-scope" ng-non-bindable="">$firebaseSimpleLogin(ref).$login( <span class="hljs-string">'google'</span>, {
+    rememberMe: <span class="hljs-literal">true</span>,
+    <span class="hljs-comment">// describe your intentions</span>
+    scope: <span class="hljs-string">'https://www.googleapis.com/auth/plus.login'</span>
+} );</pre><p class="ng-scope">Executing the above code will open a new browser window popup for logging into your application via existing Google+ accounts.  It can easily be changed for a number of other methods of login.  Once logged in the following event will fire:</p>
+<pre class="hljs ng-scope" ng-non-bindable="">$rootScope.$on(<span class="hljs-string">'$firebaseSimpleLogin:login'</span>, …</pre><p class="ng-scope">Here you can receive the user's successful login attempt and respond appropriately.  Here is a more thorough example using <strong>pseudo code</strong>:</p>
+<pre class="hljs ng-scope" ng-non-bindable="">scope.user = User.get();
+$rootScope.$on(<span class="hljs-string">'$firebaseSimpleLogin:login'</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, user)</span> </span>{
+    <span class="hljs-keyword">if</span> (user != <span class="hljs-literal">null</span>)
+        User.setUser(user.thirdPartyUserData);
+});
+$rootScope.$on(<span class="hljs-string">'$firebaseSimpleLogin:logout'</span>,
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-params">(event, user)</span> </span>{
+    User.setDefault();
+});</pre><p class="ng-scope">Using other features of $firebase such as <code ng-non-bindable="">$watch</code> events and $extendFactory, you could persist logged in users to an array, combined with your security rules to make a chat room.</p>
+  <hr class="ng-scope">
+<p class="ng-scope"><question uuid="bec622ed-be3a-4897-aca9-88a15524b360">
+What are the advantages of WebSockets?
+</question></p>
+<answer class="ng-scope">
+</answer>
+<question uuid="bf7f5028-736c-4577-beef-6c4e8503c99d" class="ng-scope">
+What are the options for implementing WebSockets?
+</question>
+<answer class="ng-scope">
+</answer>
+<question uuid="057a9f3e-58c6-43e8-bad4-ba604501c63a" class="ng-scope">
+What is a Firebase reference? and a Firebase URL?
+</question>
+<answer class="ng-scope">
+</answer>
+<question uuid="72ff4841-a9ff-4d53-a23d-f907bc901ced" class="ng-scope">
+How do we automatically bind to changes from the Firebase endpoint to our application and visa versa?
+</question>
+<answer class="ng-scope">
+</answer>
+<question uuid="d5c8de23-0e50-4a23-af1e-5450720ce978" class="ng-scope">
+How do we set data to read only on our endpoint?
+</question>
+<answer class="ng-scope">
+</answer>
+<question uuid="fc1e8c97-979c-49dc-9bd6-24e6c3361eb8" class="ng-scope">
+When is the '$firebaseSimpleLogin:login' event fired on $rootScope and what is required for it to be fired at all?
+</question>
+<answer class="ng-scope">
+</answer></div>
+<div progress-view="" progress-data="" class="ng-scope"><!-- ngRepeat: event in node.events.value() track by $index --><div ng-repeat="event in node.events.value() track by $index" class="ng-scope">
+<div ng-switch="event.label">
+  <!-- ngSwitchWhen: progressMarker --><div ng-switch-when="progressMarker" class="progress-marker ng-scope">
+    <hr>
+    <button class="progress-button ng-binding complete" ng-click="toggle(event)" ng-class="{complete: event.isComplete()}" track-click="ui:progress" track-click-action="mark" track-click-type="marker" track-click-element=".progress-button .progress-marker">
+      <i class="progress-checkmark">
+        <div class="bar-1"></div>
+        <div class="bar-2"></div>
+      </i>
+      Completed
+    </button>
+  </div><!-- end ngSwitchWhen: -->
+  <!-- ngSwitchWhen: submission -->
+</div>
+</div><!-- end ngRepeat: event in node.events.value() track by $index --><div ng-repeat="event in node.events.value() track by $index" class="ng-scope">
+<div ng-switch="event.label">
+  <!-- ngSwitchWhen: progressMarker -->
+  <!-- ngSwitchWhen: submission -->
+</div>
+</div><!-- end ngRepeat: event in node.events.value() track by $index --></div>
+<div position-data="" class="ng-scope"></div></div>
+  <!-- uiView: course-addendum --><div ui-view="course-addendum" class="ng-scope"></div>
+  <!-- uiView: course-nav-buttons --><div ui-view="course-nav-buttons" track-click="ui:navigate" track-click-action="previous/next" track-click-element="[ui-view=course-nav-buttons]:last-child" class="ng-scope"><div class="course-nav-buttons ng-scope">
+    <a class="course-prev-button" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.1" ui-sref="course.base.view(node.preOrderPrevious().getPathObject())" track-click="ui:navigate" track-click-action="previous" track-click-element=".course-prev-button">
+      <i class="gizmo-icon ss-navigateleft"></i>&nbsp;Previous
+    </a>
+    <a class="course-next-button" ui-sref="course.base.view(node.preOrderNext().getPathObject())" track-click="ui:navigate" track-click-action="next" track-click-element=".course-next-button" href="https://courses.thinkful.com/ang-001v1/assignment/4.1.3">
+      Next&nbsp;<i class="gizmo-icon ss-navigateright"></i>
+    </a>
+</div></div>
+</article>
+</div>
+
+</div>
+
+
+  
+    <script defer="" src="./Real Time Angular Apps   ANG-001_files/vendor.js"></script>
+    <script defer="" src="./Real Time Angular Apps   ANG-001_files/lib.js"></script>
+    <script defer="" src="./Real Time Angular Apps   ANG-001_files/index.js"></script>
+  
+  
+  
+
+<div id="window-resizer-tooltip" style="display: block;"><a href="https://courses.thinkful.com/#" title="Edit settings"></a><span class="tooltipTitle">Window size: </span><span class="tooltipWidth" id="winWidth">1280</span> x <span class="tooltipHeight" id="winHeight">709</span><br><span class="tooltipTitle">Viewport size: </span><span class="tooltipWidth" id="vpWidth">1280</span> x <span class="tooltipHeight" id="vpHeight">593</span></div></body></html>

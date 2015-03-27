@@ -1,90 +1,66 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="cbrAPP">
 <head>
+
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
+	<title>Cord Blood Registry</title>
+
 
 	<link rel="stylesheet" href="lib/bootstrap.css">
 	<link rel="stylesheet" href="css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/styles.css">
 	<link rel="stylesheet" href="css/animate.css">
-	<link rel="stylesheet" href="css/jquery.mmenu.css">
+	
 
-	<title>Cord Blood Registry</title>
 
 </head>
 	<body>
 		<!-- iPad status bar -->
-		<!-- 	<div class="status-bar">iPad</div> -->
+		<!-- <div class="status-bar">iPad</div> -->
 
-			<div class="container" ng-controller="landingPageCtrl">
-				<div class="header">
-		        	<a href="#menu"><span class="fa fa-bars fa-2x" id="hamburger-menu"></span></a>
-				</div>
+		<div class="container" ng-controller="landingPageCtrl">
 
-				<div id="menu">
-		    		 <ul>
-				        <li class="annotations">
-				          <i class="fa fa-pencil-square-o"></i> Annotations
-				        </li>
-				        <li class="second-screen">
-				          <i class="fa fa-slideshare"></i> Second Screen
-				        </li>
-				        <li class="collections">
-				          <i class="fa fa-plus"></i> Collections
-				        </li>
-				        <li class="email">
-				          <i class="fa fa-share"></i> Email
-				        </li>
-				        
-				<!--    <li class="comments">
-				          <i class="fa fa-comments"></i> Comments
-				        </li>
-				        <li class="notes">
-				          <i class="fa fa-pencil"></i> Notes
-				        </li> -->
+			<header>				
 
-				        <li class="previous">
-				          <i class="fa fa-arrow-left"></i> Previous
-				        </li>
-				        <li class="next">
-				          <i class="fa fa-arrow-right"></i> Next
-				        </li>
-				        <li class="close-btn">
-				          <i class="fa fa-close"></i> Close
-				        </li>
-				     </ul>
-				</div>
+				<a href="" ng-click="makeAllActiveClasses()">
+					<img class="company-logo" src="images/LogoCBR.png" height="138" width="202">
+				</a>
+				
+				<div class="invisible-close" ng-click="closeApp()"></div>
 
-				<header>
-					<a href="" ng-click="makeAllActiveClasses()"><img src="images/LogoCBR.png" height="138" width="202"></a>
-				</header>
+           <!-- <img src="images/my-items.png" class="pull-right launch-buttons" ng-click="openDiscoveryWizard()">
+				<img src="images/collections.png" class="pull-right launch-buttons" ng-click="openCollections()">
+				<img src="images/get-started.png" class="pull-right launch-buttons" ng-click="openMyItems()"> -->
 
-			    <!-- navigation should be in an ngRepeat -->
-				<main class="row">
-					<nav class="col-md-3">
-	    				<ul class="nav nav-pills nav-stacked">
-	    					<a ng-href="/{{folder.class}}" ng-repeat="folder in folders" ng-click="toggleClass($index)">
-	    						<li class="nav-menu-item {{ folder.class }}" ng-class="{inactive: folder.inactive}">
-									<img src="{{folder.thumbnailUrl}}" class="col-md-6">
-									<span class="col-md-6">{{folder.name}}</span>
-	    						</li>
-	    					</a>
-	    				</ul>					
-					</nav>
-					<content class="col-md-9">
-						<div ng-view class="{{viewClass}} row"></div>
-					</content>
-				</main>
+			</header>
 
-				<footer>
-					<img src="images/bottombannerCBR_transparent.png" height="74" width="1024">
-				</footer>
+			<main class="row">
 
-			</div>
+				<nav class="col-md-3">
+    				<ul class="nav nav-pills nav-stacked">
+    					<a ng-click="openMainFolder($index); toggleClass($index)" ng-repeat="folder in folders">
+    						<li class="nav-menu-item {{ folder.class }}" ng-class="{inactive: folder.inactive}">
+								<img src="{{folder.thumbnailUrl}}" class="col-md-6">
+								<span class="col-md-6">{{folder.name}}</span>
+    						</li>
+    					</a>
+    				</ul>					
+				</nav>
+
+				<content class="col-md-9">
+					<div ng-view class="{{viewClass}} row"></div>
+				</content>
+
+			</main>
+
+			<footer>
+				<img src="images/bottombannerCBR_transparent.png">
+			</footer>
+
+		</div>
 
 
-		<!-- scripts below  -->
 		<!-- main libaries -->
 		<script src="lib/jquery-1.9.1.min.js"></script>
 		<script src="lib/angular.js"></script>
@@ -96,8 +72,6 @@
 
 		<!-- other scripts -->
 		<script src="lib/mflyCommands.js"></script>
-		<script src="lib/jquery.mmenu.min.js"></script>
-		<script src="lib/hamburger-menu.js"></script>
 
 		<!-- main script -->
 		<script src="main.js"></script>
@@ -118,20 +92,33 @@
 		<script>
 		$(document).ready(function(){
 
-			// var HOSTNAME = window.location.origin.indexOf('localhost') ? "http://localhost:8000/" : "mfly://"
-			// mflyCommands.setPrefix(HOSTNAME);
-
 			document.addEventListener('touchmove', function(event) {
     			event.preventDefault();
 			}, false);
 
-			// function reorient(e) {
-			// 	var landscape = (window.orientation % 90 == 0);
-			//     $("body > div").css("-webkit-transform", !landscape ? "rotate(-90deg)" : "");
-			// }
-  
-  		// 	window.onorientationchange = reorient;
- 			// window.setTimeout(reorient, 0);
+			// var scrolling = false;
+
+	  //       // Uses body because jquery on events are called off of the element they are
+	  //       // added to, so bubbling would not work if we used document instead.
+	  //       $('body').on('touchstart','#bottom-section',function(e) {
+
+   //          // Only execute the below code once at a time
+   //          if (!scrolling) {
+	  //             scrolling = true;   
+	  //             if (e.currentTarget.scrollTop === 0) {
+	  //               e.currentTarget.scrollTop = 1;
+	  //             } else if (e.currentTarget.scrollHeight === e.currentTarget.scrollTop + e.currentTarget.offsetHeight) {
+	  //               e.currentTarget.scrollTop -= 1;
+	  //             }
+	  //             scrolling = false;
+   //        		}
+   //    		});
+
+	  //      // Prevents preventDefault from being called on document if it sees a scrollable div
+	  //      $('body').on('touchmove','#bottom-section',function(e) {
+	  //       	e.stopPropagation();
+	  //      });
+
 
 		});
 		</script>

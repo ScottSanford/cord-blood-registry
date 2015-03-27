@@ -3,12 +3,16 @@ angular.module('cbrAPP')
 		
 		$scope.viewClass = "landing-page";
 
+		$scope.closeApp = function() {
+			mainNavService.showControlBars();
+		}
+
 		mainNavService.getTopFolders().then(function(data){
 			$scope.folders = data.map(function(item){
 				item.class = item.name.replace(' ', '-').toLowerCase();
 				item.inactive = false;
 				return item;
-			}).reverse();
+			});
 		});
 
 		$scope.toggleClass = function(index) {
@@ -23,5 +27,9 @@ angular.module('cbrAPP')
 			$scope.folders.forEach(function(folder){
 				folder.inactive = false;
 			})
+		}
+
+		$scope.openMainFolder = function(index) {
+			$location.url("/" + $scope.folders[index].class);
 		}
 	})

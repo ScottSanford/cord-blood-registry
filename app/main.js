@@ -3,7 +3,9 @@ angular.module('cbrAPP',[
 		'ngAnimate'
 	])
 
-	.config(function ($routeProvider) {
+	.config(function ($routeProvider, $compileProvider) {
+	        $compileProvider.imgSrcSanitizationWhitelist(/^(mfly:\/\/data\/image|http:\/\/)/);
+	        
 	        $routeProvider
 	        	.when('/', {
 	        		templateUrl: "partials/landing-page.html"

@@ -56,7 +56,13 @@ angular.module('cbrAPP').factory("mainNavService", function($q) {
                 }, 
 
                 openFolder: function(folderID) {
-                    mflyCommands.openFolder(folderID);          
+                    console.log("folderID :: " + folderID);
+                    window.location = 'mfly://folder/' + folderID;          
+                    // mflyCommands.openFolder(folderID);
+                }, 
+
+                showControlBars: function() {
+                    mflyCommands.showControlBars();
                 }
 
             }

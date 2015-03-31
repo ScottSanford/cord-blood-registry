@@ -1,6 +1,7 @@
 angular.module('cbrAPP',[
 		'ngRoute', 
-		'ngAnimate'
+		'ngAnimate', 
+		'ngTouch'
 	])
 
 	.config(function ($routeProvider, $compileProvider) {

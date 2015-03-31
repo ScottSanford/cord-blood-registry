@@ -4,21 +4,17 @@ angular.module('cbrAPP')
 
 		$scope.viewClass = "clinical-resources";
 
-		folderData.getTopFolders().then(function(data){
-			var id = data[1]['id'];
-			var name = data[1]['name'];
-			folderData.getItemNameInFolder(id).then(function(data){
-				$scope.title = name;
-			});
-		})
-
-		folderData.getClinicalResources().then(function(data){
+		var id = "18aa7e1c119f4a7ebe701418b07230bfproduct169219";
+	
+		folderData.getFolder(id).then(function(data){
 			$scope.folder = data;
 		})
 
-		$scope.openFolder = function(folderID) {
-			folderData.getCBRPartnership().then(function(data){
-					folderData.openFolder(folderID);
-			});
+		folderData.getItem(id).then(function(data){
+			$scope.title = data.name;
+		})
+
+		$scope.openFolder = function(id) {
+			folderData.openFolder(id);
 		}
 	})

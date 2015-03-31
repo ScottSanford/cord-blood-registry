@@ -7,13 +7,17 @@ angular.module('cbrAPP')
 			mainNavService.showControlBars();
 		}
 
-		mainNavService.getTopFolders().then(function(data){
-			$scope.folders = data.map(function(item){
+		var rootID = "__root__";
+		
+		mainNavService.getFolder(rootID).then(function(data){
+			var dataArray = data;
+			var sliceData = dataArray.slice(1,5);
+			$scope.folders = sliceData.map(function(item){
 				item.class = item.name.replace(' ', '-').toLowerCase();
 				item.inactive = false;
 				return item;
 			});
-		});
+		})
 
 		$scope.toggleClass = function(index) {
 			$scope.folders.forEach(function(folder){

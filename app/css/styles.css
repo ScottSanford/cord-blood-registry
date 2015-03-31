@@ -2,16 +2,62 @@
 						Global Styles
 ***********************************************************************/
 
-@font-face {
-	font-family: 'Helvetica Neue Heavy';
-	src:url('../fonts/HelveticaNeueLTStd-Hv.otf');
+/*@font-face {
+	font-family: 'Helvetica Neue LT Std 85 Heavy';
+	src:url('../fonts/helvetica-neue-heavy.otf') format("opentype");
 }
+
+@font-face {
+	font-family: 'helveticaNeueBold', helvetica, sans-serif;
+	src:url('../fonts/helvetica-neue-bold.otf') format("opentype");
+}
+
+@font-face {
+	font-family: 'helveticaNeueRoman', helvetica, sans-serif;
+	src:url('../fonts/helvetica-neue-roman.otf') format("opentype");
+}*/
 
 .container {
 	padding-right:0;
 	padding-left:0;
 	width:1024px;
 }
+
+.main-container {
+	width:1024px;
+	height:469px;
+	margin-top:5px;
+}
+
+.column {
+	padding:0;
+	float:left;
+	min-height:1px;
+	position: relative;
+}
+
+.column-left-container {
+	width:282px;
+}
+
+.column-right-container {
+	width:742px;
+}
+
+.column-left-inner {
+	width:514px;
+	background-color: #F4F4F3;
+	height:469px;
+	padding:20px 20px 0 20px;
+	margin-left:10px;
+	overflow-y: scroll;
+}
+
+.column-right-inner {
+	width:208px;
+	float:right;
+}
+
 /***********************************************************************
 						Header
 ***********************************************************************/
@@ -24,11 +70,12 @@
 
 header {
 	width:100%;
+	height:190px;
 }
 
 header .company-logo {
 	margin-left: 40px;
-	margin-top: 40px;
+	margin-top: 30px;
 	margin-bottom:25px;
 }
 
@@ -62,15 +109,12 @@ main {
 	margin-top: 5px;
 }
 
-li span {
-	margin-top: 40px;
-/*	font-family: 'Helvetica Neue Heavy';*/
-}
-
-.nav > a > li > img {
+.thumbnail-image {
 	margin-top: 12px;
 	position: relative;
-  	left: 15px;
+  	left: 35px;
+  	width:90px;
+  	height:auto;
 }
 
 .nav > a {
@@ -86,7 +130,7 @@ li span {
 .nav-menu-item {
 	height:113px;
 	margin-bottom:5px;
-	margin-left:15px;
+	margin-left:0px;
 }
 
 /*****************************************************************
@@ -99,8 +143,9 @@ li span {
 
 .landing-page {
 	padding-right:0;
-	width:104%; /*This will need to be changed later*/
-	height:467px;
+	height:469px;
+	width:auto;
+	float:right;
 }
 
 .main-content {
@@ -137,7 +182,8 @@ li span {
 	animation: fadeInRight 1.0s;
 }
 
-.scientific-experience.ng-enter {
+.scientific-experience.ng-enter,
+ {
 	-webkit-animation: fadeIn 0.5s;
 	-moz-animation: fadeIn 0.5s;
 	-o-animation: fadeIn 0.5s;
@@ -166,12 +212,22 @@ li span {
 }
 
 .main-container {
-	padding:25px 40px 0 10px;
+	height:469px; /*same height as .row-main */
 }
 
-.main-container span {
+.folder-name-container {
+	float:right;
+	width:135px;
+}
+
+.folder-name {
 	text-transform: uppercase;
-	font-size:1.2em;
+	font-size:1em;
+	word-spacing: 400px;
+	float:right;
+	margin-top: 40px;
+	font-family: Helvetica, sans-serif;
+	font-weight: 400;
 }
 
 .purple-divider {
@@ -187,25 +243,35 @@ li span {
 	padding-top:25px;
 	color:#3A2769;
 	font-weight:bold;
+	max-height:407px;
+	overflow: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 .main-content-list a {
 	color:#3A2769;
+	font-family: 'helveticaNeueBold', helvetica, sans-serif;
 	text-decoration: none;
 }
 
 .main-content-list li {
 	background-color:#E1D9E9;
 	margin-bottom:5px;
-	padding-left:15px;
-	padding-bottom:7px;
-	padding-top:7px;
+	padding:8px 0 6px 15px;
 	font-size:1.1em;
+	font-family: Helvetica;
+	font-weight: 300;
 }
 
 .side-img {
-	/*max-height:500px;*/
-	height:467px; /*This is stretching out the images, will need to change this*/
+	height:469px; 
+}
+
+.folder-title {
+	color:#3A2769;
+	font-family: Helvetica, sans-serif;
+	font-weight: 300;
+	font-size: 16px;
 }
 
 /*****************************************************************

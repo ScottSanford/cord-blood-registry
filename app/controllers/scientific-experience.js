@@ -4,23 +4,18 @@ angular.module('cbrAPP')
 
 		$scope.viewClass = "scientific-experience";
 
-		folderData.getTopFolders().then(function(data){
-			var id = data[3]['id'];
-			var name = data[3]['name'];
-			folderData.getItemNameInFolder(id).then(function(data){
-				$scope.title = name;
-			});
+		var id = "18aa7e1c119f4a7ebe701418b07230bfproduct169220";
+
+		folderData.getFolder(id).then(function(data){
+			$scope.folder = data;
 		})
 
-		folderData.getScientificExperience().then(function(data){
-			$scope.folder = data;
-		});
+		folderData.getItem(id).then(function(data){
+			$scope.title = data.name;
+		})
 
-		$scope.openFolder = function(folderID) {
-			folderData.getCBRPartnership().then(function(data){
-					folderData.openFolder(folderID);
-			});
+		$scope.openFolder = function(id) {
+			folderData.openFolder(id);
 		}
-
 
 	})

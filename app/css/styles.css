@@ -77,6 +77,8 @@ header .company-logo {
 	margin-left: 40px;
 	margin-top: 30px;
 	margin-bottom:25px;
+	width:200px;
+	height:auto;
 }
 
 .invisible-close {
@@ -272,6 +274,7 @@ main {
 	font-family: Helvetica, sans-serif;
 	font-weight: 300;
 	font-size: 16px;
+	text-transform: uppercase;
 }
 
 /*****************************************************************
@@ -280,4 +283,9 @@ main {
 footer {
 	position: absolute;
 	bottom: 0px;
+}
+
+.footer-image {
+	width:1024px;
+	height:auto;
 }
